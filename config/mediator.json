@@ -5,38 +5,152 @@
   "description": "This is a sample MOH mediator written in js with full functionalities",
   "defaultChannelConfig": [
     {
-      "name": "moh-openhim-js-mediator",
-      "urlPattern": "/defaultpath",
+      "name": "moh-openhim-js-mediator post sample",
+      "urlPattern": "^/post-sample$",
       "alerts": [],
       "txRerunAcl": [],
+      "description": "This is Sample POST Mediator Route",
+      "methods": [
+        "POST"
+      ],
       "txViewFullAcl": [],
       "txViewAcl": [],
       "properties": [],
       "matchContentTypes": [],
+      "requestBody": true,
+      "responseBody": true,
+      "maxBodyAgeDays": 90,
+      "matchContentRegex": null,
+      "matchContentXpath": null,
+      "matchContentValue": null,
+      "matchContentJson": null,
+      "pollingSchedule": null,
+      "tcpHost": null,
+      "tcpPort": null,
+      "autoRetryPeriodMinutes": 60,
+      "autoRetryEnabled": false,
+      "rewriteUrlsConfig": [],
+      "addAutoRewriteRules": true,
+      "rewriteUrls": false,
+      "status": "enabled",
+      "authType": "public",
+      "whitelist": [],
+      "allow": ["admin"],
+      "type": "http",
       "routes": [
         {
-          "name": "moh-openhim-js-mediator Route",
+          "name": "moh-openhim-js-mediator post Route",
           "host": "localhost",
           "port": "6000",
           "primary": true,
-          "type": "http"
+          "type": "http",
+          "password": "",
+          "username": "",
+          "secured": false,
+          "forwardAuthHeader": false,
+          "path": "",
+          "status": "enabled"
         }
+      ]
+    },
+    {
+      "name": "moh-openhim-js-mediator get sample",
+      "urlPattern": "^/get-sample$",
+      "alerts": [],
+      "txRerunAcl": [],
+      "description": "This is Sample GET Mediator Route",
+      "methods": [
+        "GET"
       ],
+      "txViewFullAcl": [],
+      "txViewAcl": [],
+      "properties": [],
+      "matchContentTypes": [],
+      "requestBody": true,
+      "responseBody": true,
+      "maxBodyAgeDays": 90,
+      "matchContentRegex": null,
+      "matchContentXpath": null,
+      "matchContentValue": null,
+      "matchContentJson": null,
+      "pollingSchedule": null,
+      "tcpHost": null,
+      "tcpPort": null,
+      "autoRetryPeriodMinutes": 60,
+      "autoRetryEnabled": false,
+      "rewriteUrlsConfig": [],
+      "addAutoRewriteRules": true,
+      "rewriteUrls": false,
+      "status": "enabled",
+      "authType": "private",
+      "whitelist": [],
       "allow": ["admin"],
-      "type": "http"
+      "type": "https",
+      "routes": [
+        {
+          "name": "moh-openhim-js-mediator get Route",
+          "host": "localhost",
+          "port": "6000",
+          "primary": true,
+          "type": "https",
+          "password": "",
+          "username": "",
+          "secured": false,
+          "forwardAuthHeader": false,
+          "path": "",
+          "status": "enabled"
+        }
+      ]
     }
   ],
   "endpoints": [
     {
-      "name": "moh-openhim-js-mediator Route",
+      "name": "Sample POST Mediator Route",
       "host": "localhost",
-      "path": "/",
       "port": "6000",
-      "primary": true,
-      "type": "http"
+      "path": "/post-sample",
+      "type": "http",
+      "primary": true
+    },
+    {
+      "name": "Sample GET Mediator Route",
+      "host": "localhost",
+      "port": "6000",
+      "path": "/get-sample",
+      "type": "http",
+      "primary": true
     }
   ],
   "configDefs": [
+    {
+      "param": "my_definitions",
+      "displayName": "My Sample Definitions",
+      "description": "The Sample Definitions Description",
+      "type": "struct",
+      "template": [
+        {
+          "param": "url",
+          "displayName": "URL",
+          "description": "The URL of the upstream of the mediator",
+          "type": "string",
+          "template": []
+        },
+        {
+          "param": "username",
+          "displayName": "Username",
+          "description": "The Username of the upstream of the mediator",
+          "type": "string",
+          "template": []
+        },
+        {
+          "param": "password",
+          "displayName": "Password",
+          "description": "The Password of the upstream of the mediator",
+          "type": "password",
+          "template": []
+        }
+      ]
+    },
     {
       "param": "url",
       "displayName": "URL",
@@ -57,9 +171,14 @@
       "description": "The Password of the upstream of the mediator",
       "type": "password",
       "template": []
-    },
+    }
   ],
   "config": {
+    "my_definitions": {
+      "url": "http://localhost:9000/sample-url",
+      "username": "username",
+      "password": "password"
+    },
     "url": "http://localhost:9000/sample-url",
     "username": "username",
     "password": "password"
