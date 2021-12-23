@@ -1,0 +1,39 @@
+{
+  "name": "moh-openhim-js-mediator",
+  "version": "0.0.1",
+  "description": "This is a sample MOH mediator written in js with full functionalities",
+  "main": "lib/index.js",
+  "scripts": {
+    "start": "node lib/index.js",
+    "test": "export NODE_ENV=test && npm -s run test:code && npm -s run test:style",
+    "test:code": "tap --cov --reporter=spec test/basic.js",
+    "test:style": "standard -v | snazzy",
+    "cov": "npm run test:code -- --coverage-report=lcov",
+    "test:watch": "onchange '**/*.js' -- npm test"
+  },
+  "keywords": [
+    "openhim",
+    "mediator"
+  ],
+  "author": "Ministry of Health - Tanzania",
+  "license": "MPL-2.0",
+  "contributors": [
+    "Lawrance Massanja &lt;massanjal4@gmail.com&gt; (https://github.com/massanjal4)"
+  ],
+  "dependencies": {
+    "express": "^4.13.4",
+    "openhim-mediator-utils": "^0.2.2",
+    "request": "^2.71.0",
+    "urijs": "^1.17.1",
+    "xmldom": "^0.1.22",
+    "xpath": "0.0.23"
+  },
+  "devDependencies": {
+    "onchange": "^2.3.0",
+    "winston": "^2.2.0",
+    "rewire": "^2.5.1",
+    "snazzy": "^3.0.1",
+    "standard": "^6.0.8",
+    "tap": "^5.7.1"
+  }
+}

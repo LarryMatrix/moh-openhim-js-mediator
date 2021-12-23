@@ -1,0 +1,51 @@
+{
+  "urn": "urn:uuid:df240aa0-63be-11ec-89b4-eb5aa7c2552a",
+  "version": "0.0.1",
+  "name": "moh-openhim-js-mediator",
+  "description": "This is a sample MOH mediator written in js with full functionalities",
+  "defaultChannelConfig": [
+    {
+      "name": "moh-openhim-js-mediator",
+      "urlPattern": "/defaultpath",
+      "alerts": [],
+      "txRerunAcl": [],
+      "txViewFullAcl": [],
+      "txViewAcl": [],
+      "properties": [],
+      "matchContentTypes": [],
+      "routes": [
+        {
+          "name": "moh-openhim-js-mediator Route",
+          "host": "localhost",
+          "port": "6000",
+          "primary": true,
+          "type": "http"
+        }
+      ],
+      "allow": ["admin"],
+      "type": "http"
+    }
+  ],
+  "endpoints": [
+    {
+      "name": "moh-openhim-js-mediator Route",
+      "host": "localhost",
+      "path": "/",
+      "port": "6000",
+      "primary": true,
+      "type": "http"
+    }
+  ],
+  "configDefs": [
+    {
+      "param": "upstreamUrl",
+      "displayName": "Upstream URL",
+      "description": "The URL of the service upstream of the mediator",
+      "type": "string",
+      "template": []
+    }
+  ],
+  "config": {
+    "upstreamUrl": "http://sampleApplication:7001"
+  }
+}
