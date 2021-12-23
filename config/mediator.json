@@ -38,14 +38,30 @@
   ],
   "configDefs": [
     {
-      "param": "upstreamUrl",
-      "displayName": "Upstream URL",
-      "description": "The URL of the service upstream of the mediator",
+      "param": "url",
+      "displayName": "URL",
+      "description": "The URL of the upstream of the mediator",
       "type": "string",
       "template": []
-    }
+    },
+    {
+      "param": "username",
+      "displayName": "Username",
+      "description": "The Username of the upstream of the mediator",
+      "type": "string",
+      "template": []
+    },
+    {
+      "param": "password",
+      "displayName": "Password",
+      "description": "The Password of the upstream of the mediator",
+      "type": "password",
+      "template": []
+    },
   ],
   "config": {
-    "upstreamUrl": "http://sampleApplication:7001"
+    "url": "http://localhost:9000/sample-url",
+    "username": "username",
+    "password": "password"
   }
 }
