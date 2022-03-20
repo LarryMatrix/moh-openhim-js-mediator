@@ -4,7 +4,7 @@
   "description": "This is a sample MOH mediator written in js with full functionalities",
   "main": "lib/index.js",
   "scripts": {
-    "start": "node lib/index.js",
+    "start": "nodemon lib/index.js",
     "test": "export NODE_ENV=test && npm -s run test:code && npm -s run test:style",
     "test:code": "tap --cov --reporter=spec test/basic.js",
     "test:style": "standard -v | snazzy",
